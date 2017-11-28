@@ -6,6 +6,7 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * User
@@ -24,8 +25,35 @@ class User extends BaseUser
      */
     protected $id;
 
+    /** @ORM\Column(name="vk_id", type="string", length=255, nullable=true) */
+    protected $vkontakteId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="github_id", type="string", nullable=true)
+     */
+    protected $githubID;
+
+    /** @ORM\Column(name="vk_access_token", type="string", length=255, nullable=true) */
+    protected $vkontakteAccessToken;
+
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function setVkontakteAccessToken(string $token): UserInterface
+    {
+        $this->vkontakteAccessToken = $token;
+
+        return $this;
+    }
+
+    public function setVkontakteId(?int $id): UserInterface
+    {
+        $this->vkontakteId = $id;
+
+        return $this;
     }
 }
