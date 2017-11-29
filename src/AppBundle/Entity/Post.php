@@ -67,7 +67,7 @@ class Post
      */
     private $author;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -79,7 +79,7 @@ class Post
         return $this;
     }
 
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -91,7 +91,7 @@ class Post
         return $this;
     }
 
-    public function getSummary(): string
+    public function getSummary(): ?string
     {
         return $this->summary;
     }
@@ -103,7 +103,7 @@ class Post
         return $this;
     }
 
-    public function getContent(): string
+    public function getContent(): ?string
     {
         return $this->content;
     }
@@ -115,7 +115,7 @@ class Post
         return $this;
     }
 
-    public function getDateCreation(): \DateTime
+    public function getDateCreation(): ?\DateTime
     {
         return $this->dateCreation;
     }
@@ -127,12 +127,13 @@ class Post
         return $this;
     }
 
-    public function getAuthor(): UserInterface
+    public function getAuthor(): ?UserInterface
     {
         return $this->author;
     }
 
-    public function getImage(): string
+
+    public function getImage(): ?string
     {
         return $this->image;
     }
