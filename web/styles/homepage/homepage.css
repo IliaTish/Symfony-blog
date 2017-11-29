@@ -30,3 +30,28 @@
     display: block;
     margin: 10px 0 0;
 }
+
+a .post-title, a .post-subtitle{
+    color: black;
+    transition: all .2s;
+}
+
+.post-data:hover{
+    text-decoration: none;
+}
+
+.post-data h2:hover, .post-data h4:hover, .post-meta a:hover{
+    color: #0085a1;
+    text-decoration: none;
+}
+
+.post-preview>.post-meta{
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    color: #868e96;
+}
+
+.post-meta a{
+    color: black;
+}
