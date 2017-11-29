@@ -1,0 +1,57 @@
+.app-head{
+    position: relative;
+    background-image: url("../../images/home-bg.jpg") !important;
+    margin-bottom: 50px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #212529;
+    opacity: 0.5;
+}
+
+.blog-title{
+    font-size: 80px;
+}
+
+.subheading{
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+}
+
+a .post-title, a .post-subtitle{
+    color: black;
+    transition: all .2s;
+}
+
+.post-data:hover{
+    text-decoration: none;
+}
+
+.post-data h2:hover, .post-data h4:hover, .post-meta a:hover{
+    color: #0085a1;
+    text-decoration: none;
+}
+
+.post-preview>.post-meta{
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    color: #868e96;
+}
+
+.post-meta a{
+    color: black;
+}

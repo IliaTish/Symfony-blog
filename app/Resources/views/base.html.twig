@@ -2,12 +2,76 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>
+            {% block title %}
+                My Blog
+            {% endblock %}
+        </title>
+        {% block stylesheets %}
+        {% endblock %}
+        <link rel="stylesheet" href="{{ asset("bootstrap/css/bootstrap.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("styles/themes/base_theme.css?v1.15") }}">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="{{ path("_homepage") }}">Blog Title</a>
+                <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path("_about") }}">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Popular posts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Contact us</a>
+                        </li>
+                        {% if not is_granted("ROLE_USER") %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("fos_user_security_login") }}">Sign in</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path("fos_user_registration_register") }}">Sign up</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link">Create post</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link">Logout</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block body %}
+        {% endblock %}
+        <script src="{{ asset("jquery/jquery-3.2.1.min.js") }}"></script>
+        <script src="{{ asset("bootstrap/js/bootstrap.bundle.js") }}"></script>
+        {% block javascripts %}
+        {% endblock %}
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="">
+
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted">
+                            Copyright © Your Website 2017
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
