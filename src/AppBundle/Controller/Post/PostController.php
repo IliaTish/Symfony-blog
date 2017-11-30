@@ -23,6 +23,8 @@ class PostController extends Controller
 
         $form->handleRequest($request);
 
+        echo($form->isValid());
+
         if($form->isSubmitted() && $form->isValid()) {
             $post->setAuthor($this->getUser());
             $post->setDateCreation(new \DateTime());

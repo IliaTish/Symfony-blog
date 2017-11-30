@@ -27,7 +27,9 @@ class PostCreationType extends AbstractType
                     "class" => "form-control input-summary",
                 )
             ))
-            ->add("content", CKEditorType::class, array())
+            ->add("content", CKEditorType::class, array(
+                "required" => true,
+            ))
             ->add("image", FileType::class, array(
                 "attr" => array(
                     "class" => "form-control"

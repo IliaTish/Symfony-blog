@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne as ManyToOne;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -28,7 +29,7 @@ class Post
 
     /**
      * @var string
-     *
+     * @Assert\Length(min=3)
      * @ORM\Column(name="title", type="string", length=100)
      */
     private $title;
@@ -42,7 +43,7 @@ class Post
 
     /**
      * @var string
-     *
+     * @Assert\NotNull()
      * @ORM\Column(name="content", type="text")
      */
     private $content;
