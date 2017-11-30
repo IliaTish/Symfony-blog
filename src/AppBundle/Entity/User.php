@@ -63,7 +63,7 @@ class User extends BaseUser
         return $this;
     }
 
-    public function setVkontakteId(?int $id): UserInterface
+    public function setVkontakteId(int $id): UserInterface
     {
         $this->vkontakteId = $id;
 

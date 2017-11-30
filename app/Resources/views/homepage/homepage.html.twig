@@ -22,32 +22,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="post-preview">
-                        <a class="post-data" href="">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h4 class="post-subtitle">Problems look mighty small from 150 miles up</h4>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a class="post-author" href="">Ilixi</a>
-                            on
-                            <a class="post-date" href="">September 24, 2017</a>
-                        </p>
-                    </div>
-                    <hr>
-                    <div class="post-preview">
-                        <a class="post-data" href="">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h4 class="post-subtitle">Problems look mighty small from 150 miles up</h4>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a class="post-author" href="">Ilixi</a>
-                             on
-                            <a class="post-date" href="">September 24, 2017</a>
-                        </p>
-                    </div>
-                    <hr>
+                    {% for post in posts %}
+                        <div class="post-preview">
+                            <a class="post-data" href="">
+                                <h2 class="post-title">{{ post.title }}</h2>
+                                <h4 class="post-subtitle">{{ post.summary }}</h4>
+                            </a>
+                            <p class="post-meta">
+                                Posted by
+                                <a class="post-author" href="">{{ post.author.username }}</a>
+                                on
+                                <a class="post-date" href="">{{ post.dateCreation|date("Y:m:d H:i:s") }}</a>
+                            </p>
+                        </div>
+                        <hr>
+                    {% endfor %}
                 </div>
             </div>
         </div>

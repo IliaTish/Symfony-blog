@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne as ManyToOne;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Post
@@ -28,7 +29,7 @@ class Post
 
     /**
      * @var string
-     *
+     * @Assert\Length(min=3)
      * @ORM\Column(name="title", type="string", length=100)
      */
     private $title;
@@ -42,7 +43,7 @@ class Post
 
     /**
      * @var string
-     *
+     * @Assert\NotNull()
      * @ORM\Column(name="content", type="text")
      */
     private $content;
@@ -67,7 +68,7 @@ class Post
      */
     private $author;
 
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -79,7 +80,7 @@ class Post
         return $this;
     }
 
-    public function getTitle(): string
+    public function getTitle(): ?string
     {
         return $this->title;
     }
@@ -91,7 +92,7 @@ class Post
         return $this;
     }
 
-    public function getSummary(): string
+    public function getSummary(): ?string
     {
         return $this->summary;
     }
@@ -103,7 +104,7 @@ class Post
         return $this;
     }
 
-    public function getContent(): string
+    public function getContent(): ?string
     {
         return $this->content;
     }
@@ -115,7 +116,7 @@ class Post
         return $this;
     }
 
-    public function getDateCreation(): \DateTime
+    public function getDateCreation(): ?\DateTime
     {
         return $this->dateCreation;
     }
@@ -127,12 +128,13 @@ class Post
         return $this;
     }
 
-    public function getAuthor(): UserInterface
+    public function getAuthor(): ?UserInterface
     {
         return $this->author;
     }
 
-    public function getImage(): string
+
+    public function getImage(): ?string
     {
         return $this->image;
     }

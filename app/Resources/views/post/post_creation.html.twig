@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("/styles/homepage/homepage.css") }}">
+    <link rel="stylesheet" href="{{ asset("/styles/post/post.creator.css?v1.0") }}">
+{% endblock %}
+
+{% block body %}
+    <header class="app-head">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="app-heading">
+                        <h1 class="blog-title">Blog name</h1>
+                        <span class="subheading">Blog desc...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="containter">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
