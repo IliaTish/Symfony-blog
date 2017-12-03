@@ -31,6 +31,26 @@ body {
     color: white;
 }
 
+button, input[type = "submit"]{
+    color: white;
+    font-weight: 600;
+    border: 1px solid #269f42;
+    background: #269f42;
+    background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+}
+
+button:hover, input[type = "submit"]:hover{
+    background: #269f42;
+    background-image: linear-gradient(-180deg, #2fcb53 0%, #269f42 90%);
+    border: 1px solid #269f42;
+    box-shadow: 0 0 20px #269f42;
+}
+
+button:active, input[type = "submit"]:active{
+    color: white;
+    box-shadow: 0 0 20px black;
+}
+
 footer{
     padding: 50px 0 65px;
 }

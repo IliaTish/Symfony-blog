@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        Registration
+    </title>
+    <link rel="stylesheet" href="{{ asset("bootstrap/css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("styles/themes/base_theme.css?v1.20") }}">
+    <link rel="stylesheet" href="{{ asset("styles/registration/register.css?v1.15") }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+                <div class="col-lg-5 col-md-12 mx-auto registration-text text-center text-md-left">
+                    <h1 class="registration-title">Blog for developers</h1>
+                    <h4 class="registration-subtitle">Simple site for blogging</h4>
+                </div>
+                {{ form_start(form, {"attr" : {"class" : "col-lg-5 col-md-12 float-right"}}) }}
+
+                <!-- Email field -->
+                {{ form_label(form.email) }}
+                {{ form_widget(form.email, {"attr" : {"class" : "form-control", "placeholder" : "you@example.com"}}) }}
+                {{ form_errors(form.email) }}
+                <!-- Email field end -->
+
+                <!-- Username field field -->
+                {{ form_label(form.username) }}
+                {{ form_widget(form.username, {"attr" : {"class" : "form-control", "placeholder" : "Pick a username"}}) }}
+                {{ form_errors(form.username) }}
+                <!-- Username field end -->
+
+                <!-- Password field -->
+                {{ form_label(form.plainPassword.first) }}
+                {{ form_widget(form.plainPassword.first, {"attr" : {"class" : "form-control", "placeholder" : "Create a password"}}) }}
+                {{ form_errors(form.plainPassword.first) }}
+                <!-- Password field end -->
+
+                <!-- Seconds password field -->
+                {{ form_label(form.plainPassword.second) }}
+                {{ form_widget(form.plainPassword.second, {"attr" : {"class" : "form-control", "placeholder" : "Repeat a password"}}) }}
+                {{ form_errors(form.plainPassword.second) }}
+                <!-- Seconds password field end -->
+
+                <input class="form-control sign-up" type="submit" value="Sign up">
+                {{ form_end(form) }}
+        </div>
+    </div>
+</body>
+</html>
