@@ -8,6 +8,38 @@ body {
     background: white;
 }
 
+.app-head{
+    position: relative;
+    margin-bottom: 50px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    background-size: cover;
+    text-align: center;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #212529;
+    opacity: 0.5;
+}
+
+.blog-title{
+    font-size: 80px;
+}
+
+.subheading{
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+}
+
 #mainNav .navbar-brand{
     color: black;
     font-weight: 800;
