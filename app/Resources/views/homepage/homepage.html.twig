@@ -24,7 +24,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     {% for post in posts %}
                         <div class="post-preview">
-                            <a class="post-data" href="">
+                            <a class="post-data" href="{{ path("_post", {"id" : post.id}) }}">
                                 <h2 class="post-title">{{ post.title }}</h2>
                                 <h4 class="post-subtitle">{{ post.summary }}</h4>
                             </a>
