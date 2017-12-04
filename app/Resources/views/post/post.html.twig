@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block body %}
+    <header class="app-head" style="background-image: url({{ asset("images/uploads/"~post.image) }})">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="app-heading">
+                        <h1 class="blog-title">{{ post.title }}</h1>
+                        <span class="subheading">{{ post.summary }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 mx-auto">
+                    <div class="content">
+                        {{ post.content|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

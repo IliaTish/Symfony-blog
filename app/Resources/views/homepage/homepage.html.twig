@@ -1,11 +1,11 @@
 {% extends "base.html.twig" %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset("styles/homepage/homepage.css?v1.16") }}">
+    <link rel="stylesheet" href="{{ asset("styles/homepage/homepage.css?v1.17") }}">
 {% endblock %}
 
 {% block body %}
-    <header class="app-head">
+    <header class="app-head" style="background-image: url('{{ asset("images/home-bg.jpg") }}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -24,7 +24,7 @@
                 <div class="col-lg-8 col-md-10 mx-auto">
                     {% for post in posts %}
                         <div class="post-preview">
-                            <a class="post-data" href="">
+                            <a class="post-data" href="{{ path("_post", {"id" : post.id}) }}">
                                 <h2 class="post-title">{{ post.title }}</h2>
                                 <h4 class="post-subtitle">{{ post.summary }}</h4>
                             </a>
@@ -37,6 +37,9 @@
                         </div>
                         <hr>
                     {% endfor %}
+                    <div class="navigation">
+                        {{ knp_pagination_render(posts) }}
+                    </div>
                 </div>
             </div>
         </div>

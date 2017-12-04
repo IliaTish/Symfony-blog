@@ -9,12 +9,17 @@ use Doctrine\ORM\Mapping\JoinColumn as JoinColumn;
 use Doctrine\ORM\Mapping\ManyToOne as ManyToOne;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity as UniqueEntity;
 
 /**
  * Post
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
+ * @UniqueEntity(
+ *     fields={"title"},
+ *     message="This title is already exist!"
+ * )
  */
 class Post
 {
@@ -52,6 +57,9 @@ class Post
      * @var string
      *
      * @ORM\Column(name="image", type="string")
+     * @Assert\Image(
+     *
+     * )
      */
     private $image;
 
